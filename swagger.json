@@ -23,7 +23,7 @@
     "description" : "Serviços para unidades do Condomínio"
   }, {
     "name" : "Assembleia",
-    "description" : "Serviços para assembleias virtuais do Condomío"
+    "description" : "Serviços para assembleias virtuais do Condomínio"
   } ],
   "paths" : {
     "/minhaconta" : {
