@@ -1201,7 +1201,7 @@
             "type" : "number",
             "format" : "int64"
           },
-          "interessadoId" : {
+          "participanteId" : {
             "type" : "number",
             "format" : "int64"
           },
@@ -1209,7 +1209,7 @@
             "type" : "string",
             "enum" : [ "INDIFERENTE", "A_FAVOR", "CONTRA" ]
           },
-          "dataHora" : {
+          "dataVoto" : {
             "type" : "string",
             "format" : "date-time"
           }
