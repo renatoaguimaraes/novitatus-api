@@ -79,25 +79,9 @@
             "type" : "boolean"
           }
         }, {
-          "name" : "page",
-          "in" : "query",
-          "description" : "Número da página",
-          "required" : false,
-          "schema" : {
-            "type" : "number",
-            "format" : "int32",
-            "default" : 0
-          }
+          "$ref" : "#/components/parameters/Page"
         }, {
-          "name" : "size",
-          "in" : "query",
-          "description" : "Tamanho da página",
-          "required" : false,
-          "schema" : {
-            "type" : "number",
-            "format" : "int32",
-            "default" : 20
-          }
+          "$ref" : "#/components/parameters/Size"
         } ],
         "responses" : {
           "200" : {
@@ -105,7 +89,19 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/InteresseResponse"
+                  "allOf" : [ {
+                    "$ref" : "#/components/schemas/PaginationResponse"
+                  }, {
+                    "type" : "object",
+                    "properties" : {
+                      "content" : {
+                        "type" : "array",
+                        "items" : {
+                          "$ref" : "#/components/schemas/Interesse"
+                        }
+                      }
+                    }
+                  } ]
                 }
               }
             }
@@ -790,6 +786,27 @@
       }
     },
     "schemas" : {
+      "PaginationResponse" : {
+        "type" : "object",
+        "properties" : {
+          "totalElements" : {
+            "type" : "number",
+            "format" : "int32"
+          },
+          "totalPages" : {
+            "type" : "number",
+            "format" : "int32"
+          },
+          "pageSize" : {
+            "type" : "number",
+            "format" : "int32"
+          },
+          "pageNumber" : {
+            "type" : "number",
+            "format" : "int32"
+          }
+        }
+      },
       "Empresa" : {
         "type" : "object",
         "properties" : {
