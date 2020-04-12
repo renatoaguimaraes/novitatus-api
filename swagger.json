@@ -160,25 +160,9 @@
             "type" : "string"
           }
         }, {
-          "name" : "page",
-          "in" : "query",
-          "description" : "Número da página",
-          "required" : false,
-          "schema" : {
-            "type" : "number",
-            "format" : "int32",
-            "default" : 0
-          }
+          "$ref" : "#/components/parameters/Page"
         }, {
-          "name" : "size",
-          "in" : "query",
-          "description" : "Tamanho da página",
-          "required" : false,
-          "schema" : {
-            "type" : "number",
-            "format" : "int32",
-            "default" : 20
-          }
+          "$ref" : "#/components/parameters/Size"
         } ],
         "responses" : {
           "200" : {
@@ -266,25 +250,9 @@
             "type" : "boolean"
           }
         }, {
-          "name" : "page",
-          "in" : "query",
-          "description" : "Número da página",
-          "required" : false,
-          "schema" : {
-            "type" : "number",
-            "format" : "int32",
-            "default" : 0
-          }
+          "$ref" : "#/components/parameters/Page"
         }, {
-          "name" : "size",
-          "in" : "query",
-          "description" : "Tamanho da página",
-          "required" : false,
-          "schema" : {
-            "type" : "number",
-            "format" : "int32",
-            "default" : 20
-          }
+          "$ref" : "#/components/parameters/Size"
         } ],
         "responses" : {
           "200" : {
@@ -314,25 +282,9 @@
             "enum" : [ "RASCUNHO", "INICIADA", "ENCERRADA", "CANCELADA" ]
           }
         }, {
-          "name" : "page",
-          "in" : "query",
-          "description" : "Número da página",
-          "required" : false,
-          "schema" : {
-            "type" : "number",
-            "format" : "int32",
-            "default" : 0
-          }
+          "$ref" : "#/components/parameters/Page"
         }, {
-          "name" : "size",
-          "in" : "query",
-          "description" : "Tamanho da página",
-          "required" : false,
-          "schema" : {
-            "type" : "number",
-            "format" : "int32",
-            "default" : 20
-          }
+          "$ref" : "#/components/parameters/Size"
         } ],
         "responses" : {
           "200" : {
@@ -452,25 +404,9 @@
             "format" : "int64"
           }
         }, {
-          "name" : "page",
-          "in" : "query",
-          "description" : "Número da página",
-          "required" : false,
-          "schema" : {
-            "type" : "number",
-            "format" : "int32",
-            "default" : 0
-          }
+          "$ref" : "#/components/parameters/Page"
         }, {
-          "name" : "size",
-          "in" : "query",
-          "description" : "Tamanho da página",
-          "required" : false,
-          "schema" : {
-            "type" : "number",
-            "format" : "int32",
-            "default" : 20
-          }
+          "$ref" : "#/components/parameters/Size"
         } ],
         "responses" : {
           "200" : {
@@ -499,6 +435,10 @@
             "type" : "number",
             "format" : "int64"
           }
+        }, {
+          "$ref" : "#/components/parameters/Page"
+        }, {
+          "$ref" : "#/components/parameters/Size"
         } ],
         "responses" : {
           "200" : {
@@ -562,6 +502,10 @@
             "type" : "number",
             "format" : "int64"
           }
+        }, {
+          "$ref" : "#/components/parameters/Page"
+        }, {
+          "$ref" : "#/components/parameters/Size"
         } ],
         "responses" : {
           "200" : {
@@ -625,6 +569,10 @@
             "type" : "number",
             "format" : "int64"
           }
+        }, {
+          "$ref" : "#/components/parameters/Page"
+        }, {
+          "$ref" : "#/components/parameters/Size"
         } ],
         "responses" : {
           "200" : {
@@ -712,25 +660,9 @@
             "type" : "string"
           }
         }, {
-          "name" : "page",
-          "in" : "query",
-          "description" : "Número da página",
-          "required" : false,
-          "schema" : {
-            "type" : "number",
-            "format" : "int32",
-            "default" : 0
-          }
+          "$ref" : "#/components/parameters/Page"
         }, {
-          "name" : "size",
-          "in" : "query",
-          "description" : "Tamanho da página",
-          "required" : false,
-          "schema" : {
-            "type" : "number",
-            "format" : "int32",
-            "default" : 20
-          }
+          "$ref" : "#/components/parameters/Size"
         } ],
         "responses" : {
           "200" : {
@@ -813,25 +745,9 @@
             "type" : "boolean"
           }
         }, {
-          "name" : "page",
-          "in" : "query",
-          "description" : "Número da página",
-          "required" : false,
-          "schema" : {
-            "type" : "number",
-            "format" : "int32",
-            "default" : 0
-          }
+          "$ref" : "#/components/parameters/Page"
         }, {
-          "name" : "size",
-          "in" : "query",
-          "description" : "Tamanho da página",
-          "required" : false,
-          "schema" : {
-            "type" : "number",
-            "format" : "int32",
-            "default" : 20
-          }
+          "$ref" : "#/components/parameters/Size"
         } ],
         "responses" : {
           "200" : {
@@ -849,6 +765,30 @@
     }
   },
   "components" : {
+    "parameters" : {
+      "Page" : {
+        "name" : "page",
+        "in" : "query",
+        "description" : "Número da página",
+        "required" : false,
+        "schema" : {
+          "type" : "number",
+          "format" : "int32",
+          "default" : 0
+        }
+      },
+      "Size" : {
+        "name" : "size",
+        "in" : "query",
+        "description" : "Tamanho da página",
+        "required" : false,
+        "schema" : {
+          "type" : "number",
+          "format" : "int32",
+          "default" : 20
+        }
+      }
+    },
     "schemas" : {
       "Empresa" : {
         "type" : "object",
