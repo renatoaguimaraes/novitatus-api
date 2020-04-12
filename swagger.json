@@ -252,11 +252,23 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "Interessados na unidade",
+            "description" : "Interesses da conta",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/InteresseResponse"
+                  "allOf" : [ {
+                    "$ref" : "#/components/schemas/PaginationResponse"
+                  }, {
+                    "type" : "object",
+                    "properties" : {
+                      "content" : {
+                        "type" : "array",
+                        "items" : {
+                          "$ref" : "#/components/schemas/Interesse"
+                        }
+                      }
+                    }
+                  } ]
                 }
               }
             }
@@ -833,33 +845,6 @@
           "fotoId" : {
             "type" : "string",
             "format" : "uuid"
-          }
-        }
-      },
-      "InteresseResponse" : {
-        "type" : "object",
-        "properties" : {
-          "totalElements" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "totalPages" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageSize" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageNumber" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "content" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Interesse"
-            }
           }
         }
       },
