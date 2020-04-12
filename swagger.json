@@ -486,6 +486,60 @@
         }
       }
     },
+    "/condominio/assembleias/{assembleiaId}/participantes" : {
+      "get" : {
+        "tags" : [ "Assembleia" ],
+        "summary" : "Obter articipantes da assembleia",
+        "parameters" : [ {
+          "name" : "assembleiaId",
+          "in" : "path",
+          "required" : true,
+          "description" : "Identificador da assembleia",
+          "schema" : {
+            "type" : "number",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Participantes da assembleia",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ParticipanteResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Assembleia" ],
+        "summary" : "Criar participante da assembleia",
+        "parameters" : [ {
+          "name" : "assembleiaId",
+          "in" : "path",
+          "required" : true,
+          "description" : "Identificador da assembleia",
+          "schema" : {
+            "type" : "number",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Participantes da assembleia",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Participante"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/condominio/assembleias/{assembleiaId}/votacoes/{votacaoId}/votos" : {
       "get" : {
         "tags" : [ "Assembleia" ],
@@ -551,60 +605,6 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/Voto"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/condominio/assembleias/{assembleiaId}/participantes" : {
-      "get" : {
-        "tags" : [ "Assembleia" ],
-        "summary" : "Obter articipantes da assembleia",
-        "parameters" : [ {
-          "name" : "assembleiaId",
-          "in" : "path",
-          "required" : true,
-          "description" : "Identificador da assembleia",
-          "schema" : {
-            "type" : "number",
-            "format" : "int64"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Participantes da assembleia",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/ParticipanteResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post" : {
-        "tags" : [ "Assembleia" ],
-        "summary" : "Criar participante da assembleia",
-        "parameters" : [ {
-          "name" : "assembleiaId",
-          "in" : "path",
-          "required" : true,
-          "description" : "Identificador da assembleia",
-          "schema" : {
-            "type" : "number",
-            "format" : "int64"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Participantes da assembleia",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Participante"
                 }
               }
             }
