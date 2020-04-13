@@ -699,6 +699,20 @@
         "tags" : [ "Unidade" ],
         "summary" : "Listar unidades do condomínio",
         "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "description" : "Identificadores das unidades",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "number",
+              "format" : "int64"
+            }
+          }
+        }, {
           "name" : "tipo",
           "in" : "query",
           "description" : "Tipo da unidade",
