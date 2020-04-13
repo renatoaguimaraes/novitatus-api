@@ -166,7 +166,19 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ContaResponse"
+                  "allOf" : [ {
+                    "$ref" : "#/components/schemas/PaginationResponse"
+                  }, {
+                    "type" : "object",
+                    "properties" : {
+                      "content" : {
+                        "type" : "array",
+                        "items" : {
+                          "$ref" : "#/components/schemas/Conta"
+                        }
+                      }
+                    }
+                  } ]
                 }
               }
             }
@@ -300,7 +312,19 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/AssembleiaResponse"
+                  "allOf" : [ {
+                    "$ref" : "#/components/schemas/PaginationResponse"
+                  }, {
+                    "type" : "object",
+                    "properties" : {
+                      "content" : {
+                        "type" : "array",
+                        "items" : {
+                          "$ref" : "#/components/schemas/Assembleia"
+                        }
+                      }
+                    }
+                  } ]
                 }
               }
             }
@@ -422,7 +446,19 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/VotacaoResponse"
+                  "allOf" : [ {
+                    "$ref" : "#/components/schemas/PaginationResponse"
+                  }, {
+                    "type" : "object",
+                    "properties" : {
+                      "content" : {
+                        "type" : "array",
+                        "items" : {
+                          "$ref" : "#/components/schemas/Votacao"
+                        }
+                      }
+                    }
+                  } ]
                 }
               }
             }
@@ -454,7 +490,19 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ParticipanteResponse"
+                  "allOf" : [ {
+                    "$ref" : "#/components/schemas/PaginationResponse"
+                  }, {
+                    "type" : "object",
+                    "properties" : {
+                      "content" : {
+                        "type" : "array",
+                        "items" : {
+                          "$ref" : "#/components/schemas/Participante"
+                        }
+                      }
+                    }
+                  } ]
                 }
               }
             }
@@ -521,7 +569,19 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/VotoResponse"
+                  "allOf" : [ {
+                    "$ref" : "#/components/schemas/PaginationResponse"
+                  }, {
+                    "type" : "object",
+                    "properties" : {
+                      "content" : {
+                        "type" : "array",
+                        "items" : {
+                          "$ref" : "#/components/schemas/Voto"
+                        }
+                      }
+                    }
+                  } ]
                 }
               }
             }
@@ -588,7 +648,19 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ComentarioResponse"
+                  "allOf" : [ {
+                    "$ref" : "#/components/schemas/PaginationResponse"
+                  }, {
+                    "type" : "object",
+                    "properties" : {
+                      "content" : {
+                        "type" : "array",
+                        "items" : {
+                          "$ref" : "#/components/schemas/Comentario"
+                        }
+                      }
+                    }
+                  } ]
                 }
               }
             }
@@ -678,7 +750,19 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/UnidadeResponse"
+                  "allOf" : [ {
+                    "$ref" : "#/components/schemas/PaginationResponse"
+                  }, {
+                    "type" : "object",
+                    "properties" : {
+                      "content" : {
+                        "type" : "array",
+                        "items" : {
+                          "$ref" : "#/components/schemas/Unidade"
+                        }
+                      }
+                    }
+                  } ]
                 }
               }
             }
@@ -763,7 +847,19 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/InteressadoResponse"
+                  "allOf" : [ {
+                    "$ref" : "#/components/schemas/PaginationResponse"
+                  }, {
+                    "type" : "object",
+                    "properties" : {
+                      "content" : {
+                        "type" : "array",
+                        "items" : {
+                          "$ref" : "#/components/schemas/Interessado"
+                        }
+                      }
+                    }
+                  } ]
                 }
               }
             }
@@ -798,27 +894,6 @@
       }
     },
     "schemas" : {
-      "PaginationResponse" : {
-        "type" : "object",
-        "properties" : {
-          "totalElements" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "totalPages" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageSize" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageNumber" : {
-            "type" : "number",
-            "format" : "int32"
-          }
-        }
-      },
       "Empresa" : {
         "type" : "object",
         "properties" : {
@@ -871,33 +946,6 @@
           }
         }
       },
-      "InteressadoResponse" : {
-        "type" : "object",
-        "properties" : {
-          "totalElements" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "totalPages" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageSize" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageNumber" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "content" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Interessado"
-            }
-          }
-        }
-      },
       "Interessado" : {
         "type" : "object",
         "properties" : {
@@ -918,33 +966,6 @@
           },
           "recebeCobrancas" : {
             "type" : "boolean"
-          }
-        }
-      },
-      "ContaResponse" : {
-        "type" : "object",
-        "properties" : {
-          "totalElements" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "totalPages" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageSize" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageNumber" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "content" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Conta"
-            }
           }
         }
       },
@@ -982,33 +1003,6 @@
           "assinaturaId" : {
             "type" : "string",
             "format" : "uuid"
-          }
-        }
-      },
-      "AssembleiaResponse" : {
-        "type" : "object",
-        "properties" : {
-          "totalElements" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "totalPages" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageSize" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageNumber" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "content" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Assembleia"
-            }
           }
         }
       },
@@ -1055,33 +1049,6 @@
           }
         }
       },
-      "ComentarioResponse" : {
-        "type" : "object",
-        "properties" : {
-          "totalElements" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "totalPages" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageSize" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageNumber" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "content" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Comentario"
-            }
-          }
-        }
-      },
       "Comentario" : {
         "type" : "object",
         "properties" : {
@@ -1102,33 +1069,6 @@
           }
         }
       },
-      "VotacaoResponse" : {
-        "type" : "object",
-        "properties" : {
-          "totalElements" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "totalPages" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageSize" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageNumber" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "content" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Votacao"
-            }
-          }
-        }
-      },
       "Votacao" : {
         "type" : "object",
         "properties" : {
@@ -1141,33 +1081,6 @@
           },
           "detalhamento" : {
             "type" : "string"
-          }
-        }
-      },
-      "VotoResponse" : {
-        "type" : "object",
-        "properties" : {
-          "totalElements" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "totalPages" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageSize" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageNumber" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "content" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Voto"
-            }
           }
         }
       },
@@ -1192,33 +1105,6 @@
           }
         }
       },
-      "ParticipanteResponse" : {
-        "type" : "object",
-        "properties" : {
-          "totalElements" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "totalPages" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageSize" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageNumber" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "content" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Participante"
-            }
-          }
-        }
-      },
       "Participante" : {
         "type" : "object",
         "properties" : {
@@ -1233,33 +1119,6 @@
           "dataAssinatura" : {
             "type" : "string",
             "format" : "date-time"
-          }
-        }
-      },
-      "AnexoResponse" : {
-        "type" : "object",
-        "properties" : {
-          "totalElements" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "totalPages" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageSize" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageNumber" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "content" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Anexo"
-            }
           }
         }
       },
@@ -1292,33 +1151,6 @@
           },
           "url" : {
             "type" : "string"
-          }
-        }
-      },
-      "UnidadeResponse" : {
-        "type" : "object",
-        "properties" : {
-          "totalElements" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "totalPages" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageSize" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "pageNumber" : {
-            "type" : "number",
-            "format" : "int32"
-          },
-          "content" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Unidade"
-            }
           }
         }
       },
@@ -1359,6 +1191,27 @@
           "itemPlanoContaId" : {
             "type" : "number",
             "format" : "int64"
+          }
+        }
+      },
+      "PaginationResponse" : {
+        "type" : "object",
+        "properties" : {
+          "totalElements" : {
+            "type" : "number",
+            "format" : "int32"
+          },
+          "totalPages" : {
+            "type" : "number",
+            "format" : "int32"
+          },
+          "pageSize" : {
+            "type" : "number",
+            "format" : "int32"
+          },
+          "pageNumber" : {
+            "type" : "number",
+            "format" : "int32"
           }
         }
       }
