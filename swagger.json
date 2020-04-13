@@ -231,7 +231,7 @@
           "name" : "tipo",
           "in" : "query",
           "description" : "Tipo de interesse na unidade",
-          "required" : true,
+          "required" : false,
           "style" : "form",
           "explode" : true,
           "schema" : {
